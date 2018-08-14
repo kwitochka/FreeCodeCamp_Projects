@@ -75,6 +75,40 @@ footer {
   font-size: 14px;
 }
 
+@media only screen and (max-width:780px){
+
+.App {
+  margin-top: 10px;
+}
+
+  .Settings--header {
+  padding-bottom: 10px;
+}
+
+  #time-left {
+  margin: 20px auto;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+.Minutes {
+  width: 65px;
+  height: 100%;
+  margin: 5px;
+}
+
+h2, 
+h1,
+.Minutes {
+    font-size: 30px;
+}
+
+
+}
+
+
 @media only screen and (max-width:450px){
   h1, .Minutes {
     font-size: 20px;

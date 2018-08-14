@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = this.initialState;
-    this.timerID = 0;
+    // this.timerID = 0;
   }
 
   get initialState () {
@@ -21,6 +21,30 @@ class App extends Component {
       active: false
     };
   }
+
+  _increment = (time) => {
+    if (time === this.state.breakTime && time < 60) {
+      this.setState(prevState => ({
+        breakTime: prevState.breakTime + 1
+      }))
+    } else if (time === this.state.sessionTime && time < 60) {
+      this.setState(prevState => ({
+        sessionTime: prevState.sessionTime + 1
+      }))
+    }
+  };
+
+  _decrement = (time) => {
+    if (time === this.state.breakTime && time > 0){
+      this.setState(prevState=>({
+        breakTime: prevState.breakTime-1
+      }))
+    } else if (time === this.state.sessionTime && time > 0){
+      this.setState(prevState => ({
+        sessionTime: prevState.sessionTime - 1
+      }))
+    }
+  };
   
   _countDown = () => {
    if (this.state.seconds === 0) {
@@ -77,28 +101,36 @@ class App extends Component {
     });
   }
 
-  _resetAll = () => {
-    clearInterval(this.timer);
-    this.setState(this.state = this.initialState);
-  }
+  // _resetAll = () => {
+  //   clearInterval(this.timer);
+  //   this.setState(this.initialState);
+    // this.audio.pause();
+    // this.audio.currentTime = 0;
+  // }
 
   render(){
-    const {session, seconds} = this.state;
+    const {session, seconds, breakTime, sessionTime} = this.state;
     return (
       <div className="App container">
         <div className='Settings--wrap'>
         <Settings time = {this.state.breakTime} 
+          increment={()=> this._increment(breakTime)}
+          decrement={() => this._decrement(breakTime)}
           setTimer = {this._setBreak} 
           heading = 'Break time' 
           id='Break--settings' 
           timeID = 'Break--time' 
+         
         />
         <Settings 
           time = {this.state.sessionTime} 
+            increment={()=> this._increment(sessionTime)}
+            decrement={() => this._decrement(sessionTime)}
           setTimer={this._setSession} 
           heading = 'Session time' 
           id='Session--settings' 
           timeID='Session--time' 
+          
         />
         </div>
         <Timer
@@ -122,7 +154,11 @@ class App extends Component {
             src="https://png.icons8.com/windows/35/ffffff/synchronize.png"
             id="reset"
             type = "reset"
-            alt = 'Reset button' handleClick={this._resetAll}
+            alt = 'Reset button' 
+            handleClick={() => {
+              this.setState(this.initialState);
+            } 
+          }
           />
         </div>
       </div>
