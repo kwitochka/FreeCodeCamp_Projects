@@ -1,5 +1,5 @@
 body {
-  background: rgba(238,238,238, 0.8);
+  background: rgba(238, 238, 238, 0.8);
 }
 
 .App {
@@ -11,9 +11,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .Settings--container {
@@ -21,11 +21,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .Minutes {
@@ -42,12 +42,17 @@ body {
   padding-bottom: 20px;
 }
 
-#time-left {
+.Timer {
   margin: 50px auto;
-  padding: 10px;
-  text-align: center;
   border-radius: 5px;
   width: 50%;
+}
+
+#timer-label,
+#time-left {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .Button {
@@ -59,11 +64,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-#decrement, 
+#decrement,
 #increment {
   width: 55px;
   height: 55px;
@@ -75,84 +80,76 @@ footer {
   font-size: 14px;
 }
 
-@media only screen and (max-width:780px){
-
-.App {
-  margin-top: 10px;
-}
+@media only screen and (max-width: 780px) {
+  .App {
+    margin-top: 10px;
+  }
 
   .Settings--header {
-  padding-bottom: 10px;
-}
+    padding-bottom: 10px;
+  }
 
   #time-left {
-  margin: 20px auto;
-}
+    padding: 10px;
+  }
 
-footer {
-  margin-top: 20px;
-}
+  footer {
+    margin-top: 20px;
+  }
 
-.Minutes {
-  width: 65px;
-  height: 100%;
-  margin: 5px;
-}
+  .Minutes {
+    width: 65px;
+    height: 100%;
+    margin: 5px;
+  }
 
-h2, 
-h1,
-.Minutes {
+  h2,
+  h1,
+  .Minutes {
     font-size: 30px;
-}
-}
-
-@media only screen and (max-width: 530px){
-
-.Settings--header {
-  padding-bottom: 10px;
+  }
 }
 
-#time-left {
-  margin: 10px auto;
-}
+@media only screen and (max-width: 530px) {
+  .Settings--header {
+    padding-bottom: 10px;
+  }
 
-footer {
-  margin-top: 10px;
-}
+  #time-left {
+    margin: 10px auto;
+  }
 
-.Minutes {
-  width: 65px;
-  height: 100%;
-  margin: 5px;
-}
+  footer {
+    margin-top: 10px;
+  }
 
-h2, 
-h1,
-.Minutes {
+  .Minutes {
+    width: 65px;
+    height: 100%;
+    margin: 5px;
+  }
+
+  h2,
+  h1,
+  .Minutes {
     font-size: 30px;
+  }
 }
 
-
-}
-
-
-@media only screen and (max-width:450px){
-  h1, .Minutes {
+@media only screen and (max-width: 450px) {
+  h1,
+  .Minutes {
     font-size: 20px;
   }
-  
+
   h2 {
     font-size: 18px;
   }
-  
+
   .Settings--header {
     text-transform: uppercase;
   }
-  
-  #time-left {
-  margin: 30px auto;
-  }
-  
+
   .Button {
     margin-top: 0px;
     padding: 6px;
