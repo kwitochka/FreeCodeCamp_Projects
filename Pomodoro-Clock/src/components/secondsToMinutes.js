@@ -1,4 +1,4 @@
-export const secondsToMinutes = (secs)=>{
+const secondsToMinutes = (secs) => {
     let divisor_for_minutes = secs % (60 * 60);
     let minutes = Math.floor(divisor_for_minutes / 60);
 
@@ -19,3 +19,5 @@ export const secondsToMinutes = (secs)=>{
     
     return obj;
   }
+
+  export default secondsToMinutes;
